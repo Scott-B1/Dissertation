@@ -1,0 +1,25 @@
+body            {  font-family: sans-serif; 
+                   min-height: 95vh;
+                   background-image: url("background.png"); 
+                   /* background-image: linear-gradient(to top right, grey, white); */
+                   background-position: center;
+                   background-repeat: no-repeat;
+                   background-size: cover; 
+}
+                   
+.title          { text-align:center; 
+}
+
+.button   { background-color: white;
+                  border: 2px solid black;
+                  text-align: center;
+                  padding: 25px;
+                  margin: 50px auto;
+                  width: 30%;
+                  border-radius: 8px;
+                  display: block;
+}
+
+.button:hover {
+  background-color: #e6e6e6;
+}

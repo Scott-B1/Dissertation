@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="index"><button class="button-back">Back</button></form>
+
+<div class="grid-container">
+  <div class="grid-dsm grid-pad">DSM Name</div>
+  <div class="grid-pad">Last Accessed</div>
+  
+  {% for samples in samples %}
+    <div class="grid-dsm"><form action="sample" method="POST"><button class="button-dsm" id='dsm' name='dsm' value='{{ samples.id }}'>{{ samples.dsm_name }}</button></form></div>
+      <div class="grid-pad">{{ samples.last_view }}</div>
+  {% else %}
+    <div class="grid-dsm grid-pad">No entries found</div>
+    <div class="grid-pad">-</div>
+  {% endfor %}
+
+</div>
+{% endblock %}

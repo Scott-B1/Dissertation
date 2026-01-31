@@ -1,0 +1,1 @@
+{"name": "DSM Hub App", "description": "An app to improve custom DSM solutions", "uuid": "f2c1e1c2-4092-41fe-8095-52d812dc8741", "version": "1.0.0", "resources": {"memory": 200}, "areas": [{"url": "index", "required_capabilities": ["ADMIN"], "text": "DSMHub", "description": "DSM Hub App Development", "id": "DSMHub_custom_tab"}]}

@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<form action="index"><button class="button button-custom button-suggest button-cancel">Cancel</button></form>
+
+<div class="background">
+    <form action="suggest_regex" method="POST">
+    
+
+    <div class="grid-container grid-container-gap input-view">
+        <div class="ul">DSM Identifiers</div>
+        <div class="ul">Regex Field to suggest</div>
+        <div></div>
+        <div></div>
+        <div class="italic">Event Category</div>
+		{% for listEcRegexData in listEcRegexData %}
+            <div><input type="text" id="ec-regex" name="ec-regex" placeholder="Type Here..." value="{{ listEcRegexData }}"></div>
+        {% else %}
+            <div><input type="text" id="ec-regex" name="ec-regex" placeholder="Type Here..." ></div>    
+        {% endfor %}
+        <div></div>
+        <div></div>
+        <div class="italic">Event ID</div>
+	    {% for listEidRegexData in listEidRegexData %}
+            <div><input type="text" id="eid-regex" name="eid-regex" placeholder="Type Here..." value="{{ listEidRegexData }}"></div>
+        {% else %}
+            <div><input type="text" id="eid-regex" name="eid-regex" placeholder="Type Here..."></div>    
+        {% endfor %}
+        <div></div>
+        <div></div>
+    </div>
+    
+    <div class="sample-view event-view">
+	    {% for listPayloadData in listPayloadData %}
+            <input class="grid-dsm" type="text" id="payload" name="payload" placeholder="Type Sample Payload Here..." value="{{ listPayloadData }}">
+        {% else %}
+            <input class="grid-dsm" type="text" id="payload" name="payload" placeholder="Type Sample Payload Here...">    
+        {% endfor %}
+    </div>
+
+    <div class="grid-container grid-container-gap">
+	
+	    <div class="grid-outline"></div>
+        <div class="italic grid-outline">Suggestion 1</div>
+        <div class="italic grid-outline">Suggestion 2</div>
+        <div class="italic grid-outline">Suggestion 3</div>
+        
+	{% if ecRegexOutput %}
+        <div class="italic grid-outline"><b>EC</b> Regex Suggestion</div>
+        
+        {% for ecRegexFinal in ecRegexFinal %}
+		<div class="grid-outline"> {{ ecRegexFinal }} </div>
+        {% else %}
+		<div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+		{% endfor %}
+		
+        <div class="italic grid-outline"><b>EC</b> Timing (Sec)</div>
+        
+        {% for ecTimeFinal in ecTimeFinal %}
+		<div class="grid-outline"> {{ ecTimeFinal }} </div>
+        {% else %}
+		<div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+		{% endfor %}
+		
+		<div class="italic grid-outline"><b>EC</b> Regex Output</div>
+
+		<div class="grid-outline"> {{ ecRegexOutput }} </div>
+        <div class="grid-outline"> {{ ecRegexOutput }} </div>
+        <div class="grid-outline"> {{ ecRegexOutput }} </div>
+    {% else %}
+        <div class="italic grid-outline"><b>EC</b> Regex Suggestion</div>
+        
+		<div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+
+        <div class="italic grid-outline"><b>EC</b> Timing (Sec)</div>
+        
+		<div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+
+		<div class="italic grid-outline"><b>EC</b> Regex Output</div>
+
+		<div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+    {% endif %} 
+    
+        
+    {% if eidRegexOutput %}
+        <div class="italic grid-outline"><b>EID</b> Regex Suggestion</div>
+        
+        {% for eidRegexFinal in eidRegexFinal %}
+		<div class="grid-outline"> {{ eidRegexFinal }} </div>
+        {% else %}
+		<div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+		{% endfor %}
+		
+        <div class="italic grid-outline"><b>EID</b> Timing (Sec)</div>
+        
+        {% for eidTimeFinal in eidTimeFinal %}
+		<div class="grid-outline"> {{ eidTimeFinal }} </div>
+        {% else %}
+		<div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+		{% endfor %}
+		
+		<div class="italic grid-outline"><b>EID</b> Regex Output</div>
+
+		<div class="grid-outline"> {{ eidRegexOutput }} </div>
+        <div class="grid-outline"> {{ eidRegexOutput }} </div>
+        <div class="grid-outline"> {{ eidRegexOutput }} </div>
+    {% else %}
+        <div class="italic grid-outline"><b>EID</b> Regex Suggestion</div>
+        
+		<div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+
+        <div class="italic grid-outline"><b>EID</b> Timing (Sec)</div>
+        
+		<div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+
+		<div class="italic grid-outline"><b>EID</b> Regex Output</div>
+
+		<div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+    {% endif %}
+    </div>
+	
+    <button class="button button-custom button-suggest">Suggest Regex</button></form>
+</div>
+{% endblock %}

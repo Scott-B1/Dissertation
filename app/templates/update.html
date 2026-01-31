@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="index"><button class="button-back">Back</button></form>
+
+<div class="grid-container">
+  <div class="grid-updatedsm grid-pad">DSM Name</div>
+  <div class="grid-pad">Current Version</div>
+  <div class="grid-pad">Latest Version</div>
+  
+  {% for versions in versions %}
+    <div class="grid-updatedsm grid-pad">
+        <a href="https://www.ibm.com/support/fixcentral/swg/selectFixes?parent=IBM%20Security&product=ibm/Other+software/IBM+Security+QRadar+SIEM&release=7.3.0&platform=Linux&function=all#DSM"  target="_blank">
+        <!--  https://www.ibm.com/support/fixcentral/swg/selectFixes?parent=IBM%20Security&product=ibm/Other+software/IBM+Security+QRadar+SIEM&release=7.3.0&platform=Linux&function=textSearch&text=DSM+Check+Point  -->
+        <button class="button-dsm" id="name {{ versions.dsm_name }}">{{ versions.dsm_name }}</button>
+        </a>
+    </div>
+
+    <div class="grid-pad" id="cver {{ versions.current_ver }}">{{ versions.current_ver }}</div>
+    <div class="grid-pad">{{ versions.latest_ver }}</div>
+    
+    <script>
+        if ({{ versions.current_ver }} != {{ versions.latest_ver }}) {
+            document.getElementById("name {{ versions.dsm_name }}").style.color = "red";
+            document.getElementById("cver {{ versions.current_ver }}").style.color = "red";
+        }
+    </script>
+    
+  {% else %}
+    <div class="grid-updatedsm grid-pad">No entries found</div>
+    <div class="grid-pad">-</div>
+    <div class="grid-pad">-</div>
+  {% endfor %}
+  
+
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<form action="choose_custom_dsm"><button class="button button-custom button-save">Cancel</button></form>
+
+<div class="background">
+    <form action="choose_custom_dsm" method="POST">
+    
+    <div class="grid-container grid-container-gap">
+        <div class="grid-customdsm">
+    
+    {% for customdata in customdata %}
+            <input type="text" id="custom-name" name="custom-name" class="dsm-name" placeholder="Type DSM Name Here..." value="{{ customdata.dsm_name }}">
+            
+        </div>
+    </div>
+    
+    <div class="grid-container grid-container-gap input-view">
+        <div class="ul">DSM Identifiers</div>
+        <div class="ul">Regex Expression</div>
+        <div></div>
+        <div></div>
+        <div class="italic">Event Category</div>
+        <div><input type="text" id="ec-regex" name="ec-regex" placeholder="Type Here..." value="{{ customdata.ec_regex }}"></div>
+        <div></div>
+        <div></div>
+        <div class="italic">Event ID</div>
+        <div><input type="text" id="eid-regex" name="eid-regex" placeholder="Type Here..." value="{{ customdata.eid_regex }}"></div>
+        <div></div>
+        <div></div>
+    </div>
+    
+    <div class="sample-view event-view">
+        <input class="grid-dsm" type="text" id="payload" name="payload" placeholder="Type Sample Payload Here..." value="{{ customdata.payload }}">
+    </div>
+    
+    <div class="ul whitespace">                       Regex Capture                                                                        Timing <br></div>
+    
+    <div class="grid-container-preview grid-container-gap">
+        <div class="italic grid-outline">Event Category</div>
+        {% for eventCatData in eventCatData %}
+		<div class="grid-outline"> {{ eventCatData }} </div>
+        
+        {% else %}
+		<div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+		{% endfor %}
+		
+        <div class="italic grid-outline">Event ID</div>
+        {% for eventEIDData in eventEIDData %}
+		<div class="grid-outline"> {{ eventEIDData }} </div>
+        
+        {% else %}
+		<div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+		{% endfor %}
+        
+    </div>
+    {% else %}
+            <input type="text" id="custom-name" name="custom-name" class="dsm-name" placeholder="Type DSM Name Here...">
+        </div>
+    </div>
+    
+    <div class="grid-container grid-container-gap input-view">
+        <div class="ul">DSM Identifiers</div>
+        <div class="ul">Regex Expression</div>
+        <div></div>
+        <div></div>
+        <div class="italic">Event Category</div>
+        <div><input type="text" id="ec-regex" name="ec-regex" placeholder="Type Here..."></div>
+        <div></div>
+        <div></div>
+        <div class="italic">Event ID</div>
+        <div><input type="text" id="eid-regex" name="eid-regex" placeholder="Type Here..."></div>
+        <div></div>
+        <div></div>
+    </div>
+    
+    <div class="sample-view event-view">
+        <input class="grid-dsm" type="text" id="payload" name="payload" placeholder="Type Sample Payload Here...">
+    </div>
+    
+    <div class="ul whitespace">                       Regex Capture                                                                        Timing <br></div>
+    
+    <div class="grid-container-preview grid-container-gap">
+        <div class="italic grid-outline">Event Category</div>
+        <div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+        
+        <div class="italic grid-outline">Event ID</div>
+        <div class="grid-outline"> </div>
+        <div class="grid-outline"> </div>
+        
+    </div>
+    
+    {% endfor %}
+    
+    <button class="button button-custom">Save Custom DSM</button></form>
+</div>
+{% endblock %}

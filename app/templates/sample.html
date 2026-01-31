@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="choose_sample"><button class="button-back">Back</button></form>
+
+<div class="background">
+    
+    {% for sampledata in sampledata %}
+    
+    Sample DSM Payload: {{ sampledata.dsm_name }} <br>
+    <div class="sample-view">	
+    
+    <div class="grid-dsm">{{ sampledata.payload }}</div>
+    </div> 
+    
+    Key Identifying fields <br>
+    <div class="grid-container grid-container-gap">
+        <div class="grid-updatedsm grid-pad">Event Category</div>
+        <div class="grid-pad">Event ID</div>
+        <div class="grid-pad">Log Source Time</div>
+        <div class="grid-updatedsm grid-pad"> {{ sampledata.ec }} </div>
+        <div class="grid-pad"> {{ sampledata.eid }} </div>
+        <div class="grid-pad"> {{ sampledata.lstime }} </div>
+    </div>
+    {% else %}
+    
+    Sample DSM Payload: (DSM) <br>
+    <div class="sample-view">	
+    <div class="grid-dsm">No entries found</div>
+    </div> 
+    
+    
+    Key Identifying fields <br>
+    <div class="grid-container grid-container-gap">
+        <div class="grid-updatedsm grid-pad">Event Category</div>
+        <div class="grid-pad">Event ID</div>
+        <div class="grid-pad">Log Source Time</div>
+        <div class="grid-updatedsm grid-pad">VPN-1 & FireWall-1</div>
+        <div class="grid-pad">Decrypt</div>
+        <div class="grid-pad">Jan 3, 2019, 8:45:20PM</div>
+    </div>
+    
+    
+    {% endfor %}
+    
+    
+    
+    
+</div>
+{% endblock %}

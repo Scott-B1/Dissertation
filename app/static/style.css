@@ -1,0 +1,259 @@
+body            {  font-family: sans-serif; 
+                   min-height: 95vh;
+                   background-image: url("background.png"); 
+                   /* background-image: linear-gradient(to top right, grey, white); */
+                   background-position: center;
+                   background-repeat: no-repeat;
+                   background-size: cover; 
+}
+
+pre {
+    white-space: pre-wrap;
+}
+                   
+.title          { text-align:center; 
+}
+
+.ul             { text-decoration: underline; 
+}
+
+.italic         { font-style: italic; 
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.button-menu   { background-color: white;
+                  border: 2px solid black;
+                  text-align: center;
+                  font-size: 30px;
+                  padding: 25px;
+                  margin: 50px auto;
+                  width: 30%;
+                  border-radius: 8px;
+                  display: block;
+}
+
+.button-menu:hover {
+  background-color: #e6e6e6;
+}
+
+.button   { background-color: #cccccc;
+                  text-align: center;
+                  font-size: 30px;
+                  width: 100%;  
+                  border: none;
+                  display: block;
+}
+
+.button:hover {
+  background-color: #e6e6e6;
+}
+
+.button2   { 
+                  font-size: 28px;
+}
+
+.button2:hover {
+  background-color: #e6e6e6;
+}
+
+.button-dsm   { background-color: white;
+                  text-align: left;
+                  font-size: 30px;
+                  width: 100%;  
+                  padding: 15px 5px;
+                  border: none;
+                  display: block;
+}
+
+.button-dsm:hover {
+  background-color: #e6e6e6;
+}
+
+.button-back   { background-color: white;
+                  text-align: centre;
+                  font-size: 30px;
+                  width: 8%;  
+                  padding: 5px 5px;
+                  border: 1px solid black;
+                  position: fixed;
+                  top: 10px;
+                  right: 10px;
+                  display: block;
+}
+
+.button-back:hover {
+  background-color: #e6e6e6;
+}
+
+.button-custom   { text-align: centre;
+                  font-size: 30px;
+                  width: 15%;  
+                  padding: 5px 5px;
+                  border: 1px solid black;
+                  position: fixed;
+                  bottom: 5%;
+                  right: 21%;
+                  display: block;
+}
+
+.button-custom:hover {
+  background-color: #e6e6e6;
+}
+
+.button-save {  
+    right: 4%;
+}
+
+.button-save:hover {
+  background-color: #e6e6e6;
+}
+
+.button-suggest { 
+    bottom: 80.5%;
+    padding: 1px 1px;
+    right: 19%;
+    width: 17.5%;
+}
+
+.button-suggest:hover {
+  background-color: #e6e6e6;
+}
+
+.button-cancel { 
+    right: 1%;
+}
+
+.button-cancel:hover {
+  background-color: #e6e6e6;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-row-gap: 2px;
+  background-color: black;
+  padding: 2px;
+  overflow: auto;
+}
+
+.grid-container-gap {
+  grid-gap: 2px;
+}
+
+.grid-container > div {
+  background-color: white;
+  font-size: 30px;
+}
+
+.grid-container-identifier {
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: 2px;
+  background-color: black;
+  padding: 2px;
+}
+
+.grid-container-identifier > div {
+  background-color: white;
+  font-size: 30px;
+}
+
+.grid-container-preview {
+  display: grid;
+  grid-template-columns: 20vh auto 20vh;
+  grid-row-gap: 2px;
+  padding: 2px;
+  height: 22vh;
+  width: 60%;
+  overflow: auto;
+}
+
+.grid-container-preview > div {
+  background-color: white;
+  font-size: 30px;
+}
+
+.grid-pad {
+  padding: 15px 5px;
+}
+
+.grid-dsm {
+  grid-column: span 3;
+}
+
+.grid-addcustomdsm {
+    grid-column: span 4;
+}
+
+.grid-updatedsm {
+    grid-column: span 2;
+}
+
+.grid-customdsm {
+  grid-column: span 5;
+}
+
+.dsm-name { 
+    width:99.5%; 
+    
+}
+
+.grid-outline {
+  border: 2px solid black;
+}
+
+.whitespace{
+    white-space: pre;
+}
+
+.background   {   background-color: white;
+                  height: 85vh;
+                  font-size: 30px;
+                  padding: 15px 5px;
+                  border: 2px solid black;
+                  border-radius: 8px;
+                  display: block;
+                  overflow: auto;
+}
+
+.sample-view   {  height: 55vh;
+                  font-size: 30px;
+                  padding: 5px 5px;
+                  border: 2px solid black;
+                  display: block;
+                  overflow: auto;
+}
+
+.event-view   { 
+                  height: 37.5vh;
+}
+
+.input-view   { 
+                  height: 13vh;
+}
+
+input {
+    width: 98%;
+    height: 85%;
+    border: 2px solid #ccc;
+    transition: 0.5s;
+    outline: none;
+    font-size: 24px;
+}
+
+input:focus {
+    border: 2px solid #555;
+}
+
+textarea {
+  width: 99%;
+  height: 95%;
+  border: 2px solid #ccc;
+  padding: 2px 2px;
+  font-size: 16px;
+  resize: none;
+}
+
