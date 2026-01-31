@@ -1,10 +1,10 @@
 # Dissertation
 
-Final year dissertation using Python, SQLite3, HTML and CSS.
+## Final year dissertation using Python, SQLite3, HTML and CSS.
 
 Note, this is a partially redacted version due to professional usage.
 
-A Docker app that integrates directly into the IBM® QRadar® SIEM.  
+### A Docker app that integrates directly into the IBM® QRadar® SIEM.  
 
 There are some enhancements related to common QRadar user support issues and this project idea was created to solve these customer problems, that are related to integration and connections with other cybersecurity products. 
 
@@ -16,7 +16,7 @@ Some of the main concerns include:
 These problems are important to solve as companies seek to increase the detection and response time towards any cyberattacks on their organisation.
 
  
-==============Technologies to be used in this project==============
+## Technologies used in this project
 
 •	IBM QRadar software (using Red Hat Enterprise Linux Server 7 OS)
 
@@ -28,16 +28,18 @@ These problems are important to solve as companies seek to increase the detectio
 
 •	Docker
 
-==============Project Development Plan==============
+# Diagrams
 
-a
+## High level view
 
-==============Detailed architecture diagram of project==============
+<img width="1101" height="781" alt="high-level-diagram" src="https://github.com/user-attachments/assets/99e3e942-c1b2-4b49-ac0e-9ca5d062eb0f" />
 
-a
+## Detailed Architecture
+
+<img width="1431" height="1444" alt="architecture_diagram_final" src="https://github.com/user-attachments/assets/d51d64b7-f2b6-4de6-b363-04e699913f77" />
 
 
-==============Folder & file description==============
+# Folder & file description
 
  (folders are numbered lists, files are bullet point lists):
 
@@ -58,7 +60,16 @@ a
     *  schema.sql - used for creating the layout of the database and each table within
     *  views.py - the main python script which is used for creating, updating and retrieving the database, displaying and changing screens and all the backend functionality
 
-==============Installation Instructions==============
+
+## Project Development Plan
+
+2020-2021
+
+<img width="674" height="877" alt="Development_Plan" src="https://github.com/user-attachments/assets/c1001c01-302b-4220-acad-de142ff127af" />
+
+
+
+## Installation Instructions
 
 To install you need to download IBM® QRadar® Security Intelligence Platform (V7.3.3 or above) and set this up. Instructions and download links are located here: https://www.ibm.com/community/qradar/ce/
 
@@ -70,7 +81,7 @@ Click "add" and browse for the "app" folder previously downloaded. Click "instal
 
 After installation is complete refresh the QRadar page and the app should appear in the navigation bar.
 
-==============Hardware requirements for this project==============
+## Hardware requirements for this project
 
 For QRadar Community Edition:
 
